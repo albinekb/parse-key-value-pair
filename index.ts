@@ -2,7 +2,11 @@ const KEY_VALUE_REGEX = /^\s*([\w\.\-]+)\s*=\s*(.*)?\s*$/
 const LINEBREAK_REGEX = /\\n/gm
 const VALUE_CLEANUP_REGEX = /(^['"]|['"]$)/g
 
-export = function parseEnv(env: String): [string, string] {
+declare function parseKeyValuePair(env: string): [string, string]
+declare function parseKeyValuePair(env: string, options: { ignoreMalformed?: false }): [string, string]
+declare function parseKeyValuePair(env: string, options: { ignoreMalformed: true }): [string, string] | null
+
+export = function parseKeyValuePair(env: String, { ignoreMalformed = false } = {}): [string, string]  | null {
   const typeOf = typeof env
   if (typeOf !== 'string') {
     throw new TypeError(`Got ${typeOf}, expected string`)
@@ -11,6 +15,7 @@ export = function parseEnv(env: String): [string, string] {
   const match = env.match(KEY_VALUE_REGEX)
 
   if (!match) {
+    if (ignoreMalformed) return null
     throw new Error(`Unable to parse: ${env}`)
   }
 
