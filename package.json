@@ -1,6 +1,6 @@
 {
   "name": "parse-key-value-pair",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "repository": "albinekb/parse-key-value-pair",
   "main": "index.js",
   "license": "MIT",
