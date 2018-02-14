@@ -1,0 +1,18 @@
+{
+  "name": "parse-key-value-pair",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.3.0",
+    "typescript": "^2.7.1"
+  },
+  "scripts": {
+    "build": "tsc --declaration --target es5 --strict index.ts",
+    "test": "npm run build && jest"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ]
+}
