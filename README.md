@@ -4,6 +4,14 @@ Parse a string like `KEY=value` into `[key, value]`
 
 ## Installation
 
+_npm:_
+
+```sh
+npm install --save parse-key-value-pair
+```
+
+_yarn:_
+
 ```sh
 yarn add parse-key-value-pair
 ```
