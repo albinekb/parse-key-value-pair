@@ -47,6 +47,10 @@ test('Parses NODE_ENV=production', () => {
   expect(parseEnv('NODE_ENV=production')).toEqual(['NODE_ENV', 'production'])
 })
 
+test(`Parses newline`, () => {
+  expect(parseEnv('key="line1\\nline2"')).toEqual(['key', 'line1\nline2'])
+})
+
 test('Parses EQUALS==', () => {
   expect(parseEnv('EQUALS==')).toEqual(['EQUALS', '='])
 })
