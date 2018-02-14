@@ -74,4 +74,9 @@ it('Throws on invalid env', function() {
   assert.throws(() => parseKeyValuePair(''), err => err instanceof Error)
   assert.throws(() => parseKeyValuePair('='), err => err instanceof Error)
   assert.throws(() => parseKeyValuePair(), err => err instanceof TypeError)
+  assert.throws(() => parseKeyValuePair(undefined), err => err instanceof TypeError)
+})
+
+it('Does not throw with ignoreMalformed: true', function() {
+  assert.equal(parseKeyValuePair('', {ignoreMalformed: true}), null)
 })

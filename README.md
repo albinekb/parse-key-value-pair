@@ -29,3 +29,7 @@ const [key, value] = parseKeyValue('NODE_ENV=production')
 ### `parseKeyValuePair(input) => [key, value]`
 
 Returns the parsed key and value
+
+### `parseKeyValuePair(input, { ignoreMalformed: true }) => [key, value] | null`
+
+Returns the parsed key and value, returns `null` for malformed strings like `""` and `=`
