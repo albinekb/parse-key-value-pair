@@ -7,7 +7,7 @@ it('Parses BASIC=basic', function() {
 it('Parses UNDEFINED_EXPAND=$TOTALLY_UNDEFINED_ENV_KEY', function() {
   assert.deepStrictEqual(
     parseEnv('UNDEFINED_EXPAND=$TOTALLY_UNDEFINED_ENV_KEY'),
-    ['UNDEFINED_EXPAND', '$TOTALLY_UNDEFINED_ENV_KEY'],
+    ['UNDEFINED_EXPAND', '$TOTALLY_UNDEFINED_ENV_KEY']
   )
 })
 it(`Parses SINGLE_QUOTES='single_quotes'`, function() {
@@ -37,7 +37,7 @@ it(`Parses RETAIN_INNER_QUOTES={"foo": "bar"}`, function() {
 it(`Parses RETAIN_INNER_QUOTES_AS_STRING='{"foo": "bar"}'`, function() {
   assert.deepStrictEqual(
     parseEnv(`RETAIN_INNER_QUOTES_AS_STRING='{"foo": "bar"}'`),
-    ['RETAIN_INNER_QUOTES_AS_STRING', `{"foo": "bar"}`],
+    ['RETAIN_INNER_QUOTES_AS_STRING', `{"foo": "bar"}`]
   )
 })
 it(`Parses INCLUDE_SPACE=some spaced out string`, function() {
@@ -68,7 +68,7 @@ it('Parses EQUALS==', function() {
 it('Throws on invalid env', function() {
   assert.throws(
     () => parseEnv(['=', 'API=example.com']),
-    err => err instanceof TypeError,
+    err => err instanceof TypeError
   )
   assert.throws(() => parseEnv('API'), err => err instanceof Error)
   assert.throws(() => parseEnv(''), err => err instanceof Error)
