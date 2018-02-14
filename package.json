@@ -5,15 +5,12 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^22.3.0",
+    "mocha": "^5.0.1",
     "typescript": "^2.7.1"
   },
   "scripts": {
     "build": "tsc --declaration --target es5 --strict index.ts",
-    "test": "npm run build && jest"
+    "test": "npm run build && mocha"
   },
-  "files": [
-    "index.js",
-    "index.d.ts"
-  ]
+  "files": ["index.js", "index.d.ts"]
 }
