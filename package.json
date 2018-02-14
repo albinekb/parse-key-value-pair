@@ -1,6 +1,6 @@
 {
   "name": "parse-key-value-pair",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -11,5 +11,8 @@
     "build": "tsc --declaration --target es5 --strict index.ts",
     "test": "npm run build && jest"
   },
-  "files": ["index.js", "index.d.ts"]
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ]
 }
