@@ -1,6 +1,6 @@
 {
   "name": "parse-key-value-pair",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "repository": "albinekb/parse-key-value-pair",
   "main": "index.js",
   "license": "MIT",
@@ -12,5 +12,8 @@
     "build": "tsc --declaration --target es5 --strict index.ts",
     "test": "npm run build && mocha"
   },
-  "files": ["index.js", "index.d.ts"]
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ]
 }
