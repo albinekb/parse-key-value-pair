@@ -16,10 +16,6 @@ export = function parseEnv(env: String): [string, string] {
 
   let [, key, value = ''] = match
 
-  if (key.length === 0) {
-    throw new Error(`Env variable with value: ${value} has no key`)
-  }
-
   // expand newlines in quoted values
   const len = value ? value.length : 0
   if (len > 0 && value.charAt(0) === '"' && value.charAt(len - 1) === '"') {
