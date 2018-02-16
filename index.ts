@@ -6,7 +6,7 @@ declare function parseKeyValuePair(env: string): [string, string]
 declare function parseKeyValuePair(env: string, options: { ignoreMalformed?: false }): [string, string]
 declare function parseKeyValuePair(env: string, options: { ignoreMalformed: true }): [string, string] | null
 
-export = function parseKeyValuePair(env: String, { ignoreMalformed = false } = {}): [string, string]  | null {
+export = function parseKeyValuePair(env: string, { ignoreMalformed = false } = {}): [string, string] | null {
   const typeOf = typeof env
   if (typeOf !== 'string') {
     throw new TypeError(`Got ${typeOf}, expected string`)
