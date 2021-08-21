@@ -1,17 +1,24 @@
-name: CI
-on: [push]
+name: Node CI
+
+on:
+  pull_request:
+    branches:
+    - master
+
 jobs:
-  build:
-    name: Test
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+        node: [12.20.0, 14.13.1, 16.0.0]
+    runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v1
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: build # will run `yarn build` command
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: test # will run `yarn test` command
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node }}
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      run: npm test
