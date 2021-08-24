@@ -19,7 +19,7 @@ yarn add parse-key-value-pair
 ## Usage
 
 ```js
-const parseKeyValue = require('parse-key-value-pair')
+import parseKeyValue from 'parse-key-value-pair'
 
 const [key, value] = parseKeyValue('NODE_ENV=production')
 ```

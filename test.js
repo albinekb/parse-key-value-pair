@@ -1,5 +1,5 @@
-const parseKeyValuePair = require('./index.js')
-const assert = require('assert')
+import assert from 'node:assert'
+import parseKeyValuePair from './index.js'
 
 it('Parses BASIC=basic', function() {
   assert.deepStrictEqual(parseKeyValuePair('BASIC=basic'), ['BASIC', 'basic'])
