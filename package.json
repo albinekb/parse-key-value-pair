@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "tsc --declaration --target es2019 --module es2020 --strict index.ts",
+    "prepare": "npm run build",
     "test": "npm run build && mocha"
   },
   "files": [
